@@ -1,20 +1,22 @@
-import { Link } from "react-router-dom"; // Import the Link component from react-router-dom for navigation
-import MobileNav from "./MobileNav";
-import MainNav from "./MainNav";
+import { Link } from "react-router-dom"; // Import Link for client-side navigation
+import MobileNav from "./MobileNav"; // Import mobile navigation component
+import MainNav from "./MainNav"; // Import main navigation component
 
 const Header = () => {
     return (
-        // Header container with a bottom border and padding for spacing
+        // Main header container with purple bottom border and vertical padding
         <div className="border-b-2 border-b-purple-500 py-6">
-            {/* Inner container to align content, centers it horizontally */}
+            {/* Inner container for content alignment */}
             <div className="container mx-auto flex justify-between items-center">
-                {/* Link component for navigating to the home page ('/') */}
+                 {/* Home page link with styled text */}
                 <Link to="/" className="text-3xl font-bold tracking-tight text-purple-500">
-                    FrFoods.com {/* The website name displayed as a styled link */}
+                    FrFoods.com
                 </Link>
+                 {/* Mobile navigation, visible only on small screens */}
                 <div className="md:hidden">
                     <MobileNav/>
                 </div>
+                 {/* Main navigation, hidden on small screens, visible on medium and larger */}
                 <div className="hidden md:block">
                     <MainNav/>
                 </div>
